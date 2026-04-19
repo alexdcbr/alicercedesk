@@ -7,18 +7,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
 
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email=? AND senha=?");
     $stmt->bind_param("ss", $email, $senha);
     $stmt->execute();
 
-    $resultado = $stmt->get_result();
+    $result = $stmt->get_result();
 
-    if ($resultado->num_rows > 0) {
-        $_SESSION['usuario'] = $resultado->fetch_assoc();
+    if ($result->num_rows > 0) {
+        $_SESSION['usuario'] = $result->fetch_assoc();
         header("Location: dashboard.php");
         exit;
     } else {
-        $erro = "Email ou senha inválidos";
+        $erro = "Usuário ou senha inválidos";
     }
 }
 ?>
@@ -26,9 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AlicerceDesk - Login</title>
+    <title>Login - AlicerceDesk</title>
 
+    <!-- FONTE -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -36,10 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="login-card">
 
-    <h3 class="login-title">AlicerceDesk</h3>
+    <div class="login-title">
+        AlicerceDesk
+    </div>
 
     <?php if (isset($erro)): ?>
-        <div class="alert alert-danger text-center">
+        <div class="alert alert-danger">
             <?= $erro ?>
         </div>
     <?php endif; ?>
@@ -56,9 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" name="senha" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-dark w-100">
-            Entrar
-        </button>
+        <button class="btn btn-primary w-100">Entrar</button>
 
     </form>
 
