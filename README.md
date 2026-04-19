@@ -1,2 +1,2 @@
 # alicercedesk
-Sistema feito em PH para gerenciar HelpDesk
+Sistema feito em PHP para gerenciar HelpDesk
