@@ -1,228 +1,158 @@
-# alicercedesk
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>AlicerceDesk - Documentação</title>
+# 🚀 AlicerceDesk
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+Sistema de gerenciamento de chamados inspirado em plataformas como Zendesk.  
+Desenvolvido em **PHP puro + MySQL**, com foco em aprendizado progressivo e arquitetura escalável.
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-        }
+---
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
+## 🧩 Tecnologias
 
-        h1 {
-            margin-top: 0;
-            font-size: 32px;
-        }
+- 🟢 PHP
+- 🔵 MySQL
+- 🎨 CSS (layout estilo SaaS)
+- ⚡ JavaScript (AJAX polling)
+- 📊 Chart.js
 
-        h2 {
-            margin-top: 30px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 10px;
-        }
+---
 
-        p {
-            line-height: 1.6;
-        }
+## 📌 Funcionalidades
 
-        .badge {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            margin-right: 5px;
-        }
+- Cadastro e autenticação de usuários  
+- Abertura de chamados  
+- Chat em tempo quase real (polling AJAX)  
+- Upload de anexos  
+- Preview de imagens  
+- Controle de permissões (cliente / agente / admin)  
+- Dashboard com métricas  
 
-        .badge-green { background: #22c55e; color: #fff; }
-        .badge-blue { background: #3b82f6; color: #fff; }
-        .badge-yellow { background: #facc15; }
+---
 
-        ul {
-            padding-left: 20px;
-        }
+## 📊 Dashboard
 
-        .timeline {
-            border-left: 2px solid #e2e8f0;
-            padding-left: 20px;
-        }
+- KPIs de chamados  
+- Gráfico de status (rosca)  
+- Gráfico de evolução (linha)  
+- SLA (tempo médio de resolução)  
+- FRT (tempo de primeira resposta)  
 
-        .timeline-item {
-            margin-bottom: 20px;
-        }
+---
 
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 12px;
-            color: #94a3b8;
-        }
+## 🎨 Interface
 
-        code {
-            background: #f1f5f9;
-            padding: 3px 6px;
-            border-radius: 5px;
-        }
-    </style>
-</head>
+- Layout moderno estilo SaaS  
+- Sidebar com navegação ativa  
+- Ícones (Bootstrap Icons)  
+- Chat estilo WhatsApp  
+- Modal para visualização de imagens  
 
-<body>
+---
 
-<div class="container">
+## 🔐 Regras de Acesso
 
-    <h1>🚀 AlicerceDesk</h1>
+- 👤 **Cliente**
+  - Visualiza apenas seus chamados  
+  - Sem acesso a métricas e gráficos  
 
-    <p>
-        Sistema de gerenciamento de chamados inspirado em plataformas como Zendesk.
-        Desenvolvido em PHP puro + MySQL, com foco em aprendizado progressivo e arquitetura escalável.
-    </p>
+- 🧑‍💼 **Agente/Admin**
+  - Visualiza todos os chamados  
+  - Acesso ao dashboard completo  
 
-    <div>
-        <span class="badge badge-green">PHP</span>
-        <span class="badge badge-blue">MySQL</span>
-        <span class="badge badge-yellow">SaaS Ready</span>
-    </div>
+---
 
-    <h2>📌 Funcionalidades</h2>
+## 🧠 Arquitetura
 
-    <ul>
-        <li>Cadastro e autenticação de usuários</li>
-        <li>Abertura de chamados</li>
-        <li>Chat em tempo quase real (polling)</li>
-        <li>Upload de anexos</li>
-        <li>Preview de imagens</li>
-        <li>Controle de permissões (cliente / agente / admin)</li>
-        <li>Dashboard com métricas</li>
-    </ul>
+- Estrutura com **partials**
+  - `header.php`
+  - `sidebar.php`
+  - `footer.php`
 
-    <h2>📊 Dashboard</h2>
+- Separação de responsabilidades:
+  - Layout
+  - Lógica
+  - Estilo (CSS)
 
-    <ul>
-        <li>KPIs de chamados</li>
-        <li>Gráfico de status</li>
-        <li>Gráfico de evolução</li>
-        <li>Tempo médio de resolução (SLA)</li>
-        <li>Tempo de primeira resposta (FRT)</li>
-    </ul>
+- API interna com AJAX para chat
 
-    <h2>🎨 Interface</h2>
+---
 
-    <ul>
-        <li>Layout moderno estilo SaaS</li>
-        <li>Sidebar com navegação ativa</li>
-        <li>Ícones (Bootstrap Icons)</li>
-        <li>Chat estilo WhatsApp</li>
-        <li>Modal de visualização de imagens</li>
-    </ul>
+## 🗄️ Banco de Dados
 
-    <h2>🔐 Regras de Acesso</h2>
+Principais tabelas:
 
-    <ul>
-        <li><b>Cliente:</b> Visualiza apenas seus chamados</li>
-        <li><b>Agente/Admin:</b> Visualiza métricas e todos chamados</li>
-    </ul>
+- `usuarios`
+- `chamados`
+- `mensagens_chamado`
+- `anexos`
 
-    <h2>🧠 Arquitetura</h2>
+Campos importantes:
 
-    <ul>
-        <li>Separação de layout com <code>partials/</code></li>
-        <li>Header, Sidebar e Footer reutilizáveis</li>
-        <li>CSS centralizado</li>
-        <li>API interna via AJAX (chat)</li>
-    </ul>
+- `resolvido_em` → SLA  
+- `primeira_resposta_em` → FRT  
 
-    <h2>🗄️ Banco de Dados</h2>
+---
 
-    <ul>
-        <li><code>usuarios</code></li>
-        <li><code>chamados</code></li>
-        <li><code>mensagens_chamado</code></li>
-        <li><code>anexos</code></li>
-    </ul>
+## 📈 Métricas Implementadas
 
-    <h2>📈 Métricas Implementadas</h2>
+- ⏱️ **SLA**
+  - Tempo médio de resolução (em horas)
 
-    <ul>
-        <li><b>SLA:</b> Tempo médio de resolução</li>
-        <li><b>FRT:</b> Tempo de primeira resposta</li>
-    </ul>
+- ⚡ **FRT (First Response Time)**
+  - Tempo até a primeira resposta (em minutos)
 
-    <h2>🛠️ Histórico de Evolução</h2>
+---
 
-    <div class="timeline">
+## 🛠️ Histórico de Evolução
 
-        <div class="timeline-item">
-            <b>Fase 1:</b> CRUD de chamados
-        </div>
+### Fase 1
+- CRUD de chamados
 
-        <div class="timeline-item">
-            <b>Fase 2:</b> Sistema de login e permissões
-        </div>
+### Fase 2
+- Sistema de login e permissões
 
-        <div class="timeline-item">
-            <b>Fase 3:</b> Chat interno com mensagens
-        </div>
+### Fase 3
+- Chat interno
 
-        <div class="timeline-item">
-            <b>Fase 4:</b> Upload e preview de arquivos
-        </div>
+### Fase 4
+- Upload e preview de arquivos
 
-        <div class="timeline-item">
-            <b>Fase 5:</b> Interface moderna (CSS + UX)
-        </div>
+### Fase 5
+- Interface moderna (CSS)
 
-        <div class="timeline-item">
-            <b>Fase 6:</b> Chat em tempo real (AJAX polling)
-        </div>
+### Fase 6
+- Chat em tempo real (polling AJAX)
 
-        <div class="timeline-item">
-            <b>Fase 7:</b> Dashboard com métricas
-        </div>
+### Fase 7
+- Dashboard com métricas
 
-        <div class="timeline-item">
-            <b>Fase 8:</b> SLA e FRT
-        </div>
+### Fase 8
+- SLA (tempo de resolução)
 
-        <div class="timeline-item">
-            <b>Fase 9:</b> Refatoração com layout reutilizável
-        </div>
+### Fase 9
+- FRT (tempo de primeira resposta)
 
-        <div class="timeline-item">
-            <b>Fase 10:</b> UI estilo SaaS (Zendesk-like)
-        </div>
+### Fase 10
+- Refatoração com layout reutilizável (partials)
 
-    </div>
+### Fase 11
+- UI estilo SaaS (Zendesk-like)
 
-    <h2>🚀 Próximos Passos</h2>
+---
 
-    <ul>
-        <li>WebSocket real (Node.js)</li>
-        <li>Notificações em tempo real</li>
-        <li>Ranking de atendentes</li>
-        <li>SLA com alertas</li>
-        <li>Relatórios avançados</li>
-        <li>Versão mobile responsiva</li>
-    </ul>
+## 🚀 Próximos Passos
 
-    <div class="footer">
-        AlicerceDesk © 2026 - Projeto em evolução 🚀
-    </div>
+- 🔥 WebSocket real (Node.js)
+- 🔔 Notificações em tempo real
+- 👤 Ranking de atendentes
+- 🚨 SLA com alertas
+- 📊 Relatórios avançados
+- 📱 Layout responsivo (mobile)
+- 🌙 Tema escuro
 
-</div>
+---
 
-</body>
-</html>
+## 🧪 Como Executar o Projeto
+
+1. Instale o **Laragon** ou outro ambiente com PHP + MySQL  
+2. Clone o projeto:
+   ```bash
+   git clone http://localhost/alicercedesk
