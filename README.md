@@ -1,2 +1,228 @@
 # alicercedesk
-Sistema feito em PHP para gerenciar HelpDesk
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>AlicerceDesk - Documentação</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .badge-green { background: #22c55e; color: #fff; }
+        .badge-blue { background: #3b82f6; color: #fff; }
+        .badge-yellow { background: #facc15; }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .timeline {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 AlicerceDesk</h1>
+
+    <p>
+        Sistema de gerenciamento de chamados inspirado em plataformas como Zendesk.
+        Desenvolvido em PHP puro + MySQL, com foco em aprendizado progressivo e arquitetura escalável.
+    </p>
+
+    <div>
+        <span class="badge badge-green">PHP</span>
+        <span class="badge badge-blue">MySQL</span>
+        <span class="badge badge-yellow">SaaS Ready</span>
+    </div>
+
+    <h2>📌 Funcionalidades</h2>
+
+    <ul>
+        <li>Cadastro e autenticação de usuários</li>
+        <li>Abertura de chamados</li>
+        <li>Chat em tempo quase real (polling)</li>
+        <li>Upload de anexos</li>
+        <li>Preview de imagens</li>
+        <li>Controle de permissões (cliente / agente / admin)</li>
+        <li>Dashboard com métricas</li>
+    </ul>
+
+    <h2>📊 Dashboard</h2>
+
+    <ul>
+        <li>KPIs de chamados</li>
+        <li>Gráfico de status</li>
+        <li>Gráfico de evolução</li>
+        <li>Tempo médio de resolução (SLA)</li>
+        <li>Tempo de primeira resposta (FRT)</li>
+    </ul>
+
+    <h2>🎨 Interface</h2>
+
+    <ul>
+        <li>Layout moderno estilo SaaS</li>
+        <li>Sidebar com navegação ativa</li>
+        <li>Ícones (Bootstrap Icons)</li>
+        <li>Chat estilo WhatsApp</li>
+        <li>Modal de visualização de imagens</li>
+    </ul>
+
+    <h2>🔐 Regras de Acesso</h2>
+
+    <ul>
+        <li><b>Cliente:</b> Visualiza apenas seus chamados</li>
+        <li><b>Agente/Admin:</b> Visualiza métricas e todos chamados</li>
+    </ul>
+
+    <h2>🧠 Arquitetura</h2>
+
+    <ul>
+        <li>Separação de layout com <code>partials/</code></li>
+        <li>Header, Sidebar e Footer reutilizáveis</li>
+        <li>CSS centralizado</li>
+        <li>API interna via AJAX (chat)</li>
+    </ul>
+
+    <h2>🗄️ Banco de Dados</h2>
+
+    <ul>
+        <li><code>usuarios</code></li>
+        <li><code>chamados</code></li>
+        <li><code>mensagens_chamado</code></li>
+        <li><code>anexos</code></li>
+    </ul>
+
+    <h2>📈 Métricas Implementadas</h2>
+
+    <ul>
+        <li><b>SLA:</b> Tempo médio de resolução</li>
+        <li><b>FRT:</b> Tempo de primeira resposta</li>
+    </ul>
+
+    <h2>🛠️ Histórico de Evolução</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <b>Fase 1:</b> CRUD de chamados
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 2:</b> Sistema de login e permissões
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 3:</b> Chat interno com mensagens
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 4:</b> Upload e preview de arquivos
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 5:</b> Interface moderna (CSS + UX)
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 6:</b> Chat em tempo real (AJAX polling)
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 7:</b> Dashboard com métricas
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 8:</b> SLA e FRT
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 9:</b> Refatoração com layout reutilizável
+        </div>
+
+        <div class="timeline-item">
+            <b>Fase 10:</b> UI estilo SaaS (Zendesk-like)
+        </div>
+
+    </div>
+
+    <h2>🚀 Próximos Passos</h2>
+
+    <ul>
+        <li>WebSocket real (Node.js)</li>
+        <li>Notificações em tempo real</li>
+        <li>Ranking de atendentes</li>
+        <li>SLA com alertas</li>
+        <li>Relatórios avançados</li>
+        <li>Versão mobile responsiva</li>
+    </ul>
+
+    <div class="footer">
+        AlicerceDesk © 2026 - Projeto em evolução 🚀
+    </div>
+
+</div>
+
+</body>
+</html>
