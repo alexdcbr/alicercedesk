@@ -1,6 +1,6 @@
 <?php
+require_once(__DIR__ . '/../config/database.php');
 session_start();
-require_once('../config/database.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -26,15 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Login - AlicerceDesk</title>
 
-    <!-- FONTE -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- 🔥 CSS LOCAL DIRETO -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -42,30 +41,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="login-card">
 
-    <div class="login-title">
-        AlicerceDesk
-    </div>
+    <div class="login-title">AlicerceDesk</div>
 
     <?php if (isset($erro)): ?>
-        <div class="alert alert-danger">
-            <?= $erro ?>
-        </div>
+        <div class="alert alert-danger"><?= $erro ?></div>
     <?php endif; ?>
 
     <form method="POST">
-
         <div class="mb-3">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" required>
+            <input type="email" name="email" class="form-control">
         </div>
 
         <div class="mb-3">
             <label>Senha</label>
-            <input type="password" name="senha" class="form-control" required>
+            <input type="password" name="senha" class="form-control">
         </div>
 
         <button class="btn btn-primary w-100">Entrar</button>
-
     </form>
 
     <div class="login-footer">
