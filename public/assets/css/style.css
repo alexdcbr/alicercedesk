@@ -1,29 +1,105 @@
+/* RESET */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f1f5f9;
+}
+
 /* SIDEBAR */
 .sidebar {
     width: 240px;
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
     background: #1e293b;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar a {
+.sidebar-logo {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.sidebar-menu a {
     display: flex;
+    align-items: center;
     gap: 10px;
+
     color: #cbd5e1;
     padding: 10px;
+    border-radius: 8px;
     text-decoration: none;
+    margin-bottom: 5px;
+
+    transition: 0.2s;
 }
 
-.sidebar a.active {
+.sidebar-menu a:hover {
+    background: #334155;
+    color: #fff;
+}
+
+.sidebar-menu a.active {
     background: #3b82f6;
     color: #fff;
 }
 
-/* CONTENT */
+.sidebar-menu i {
+    font-size: 18px;
+}
+
+/* CONTEÚDO */
 .content {
     margin-left: 240px;
     padding: 30px;
+}
+
+/* TOPBAR */
+.topbar {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* TABELA */
+.table {
+    margin-top: 10px;
+}
+
+.table th {
+    font-weight: 600;
+}
+
+/* STATUS */
+.status-aberto {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.status-pendente {
+    background: #facc15;
+    color: #000;
+}
+
+.status-resolvido {
+    background: #22c55e;
+    color: #fff;
+}
+
+/* BOTÕES */
+.btn {
+    border-radius: 6px;
 }
 
 /* LOGIN */
@@ -36,15 +112,68 @@
 }
 
 .login-card {
-    max-width: 400px;
     width: 100%;
+    max-width: 400px;
     padding: 30px;
     background: #fff;
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+/* CHAT */
+.chat-box {
+    max-height: 500px;
+    overflow-y: auto;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chat-message.me {
+    justify-content: flex-end;
+}
+
+.chat-message.other {
+    justify-content: flex-start;
+}
+
+.chat-bubble {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e2e8f0;
+}
+
+.chat-message.me .chat-bubble {
+    background: #3b82f6;
+    color: #fff;
 }
 
 /* GRÁFICO */
 .grafico-rosca-container {
-    max-width: 320px;
+    max-width: 300px;
     margin: 0 auto;
+}
+
+/* FORM */
+.form-control {
+    border-radius: 6px;
 }
